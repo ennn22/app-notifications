@@ -27,7 +27,6 @@ body {
   background-color: var(--main-bg-color);
   margin-top: 100px;
   height: 80vh;
-  position: relative;
   padding-top: 50px;
 }
 
@@ -35,6 +34,7 @@ body {
   background-color: var(--bg-color-1);
   width: 450px;
   margin: 0 auto;
+  position: relative;
 }
 
 .bell {
@@ -44,12 +44,26 @@ body {
   padding: 5px 0;
   text-align: center;
   position: absolute;
-  top: -20px;
-  right: 35%;
+  top: -40px;
+  right: 0;
+  animation: shake;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform: rotate(0deg);
 }
 
 .bell svg {
   height: 40px;
+}
+
+@keyframes shake {
+  0% {transform: rotate(0deg)}
+  20% {transform: rotate(-25deg)}
+  40% {transform: rotate(0deg)}
+  60% {transform: rotate(25deg)}
+  100% {transform: rotate(0deg)}
 }
 
 .header {
@@ -127,4 +141,8 @@ body {
   font-weight: 600;
   color: var(--font-color-4);
   cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
